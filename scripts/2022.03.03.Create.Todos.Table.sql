@@ -1,0 +1,15 @@
+CREATE TABLE Todos (
+	Id INTEGER NOT NULL,
+	Title TEXT NOT NULL,
+	Description TEXT NULL,
+	CreationDate TEXT NOT NULL,
+	DueTo TEXT,
+	Status INTEGER NOT NULL,
+    UserId INTEGER NOT NULL,
+    
+	PRIMARY KEY(Id AUTOINCREMENT)
+    FOREIGN KEY(UserId) 
+        REFERENCES Users(Id) 
+            ON UPDATE CASCADE 
+            ON DELETE SET NULL
+);
