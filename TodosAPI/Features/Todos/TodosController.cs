@@ -15,12 +15,12 @@ namespace TodosAPI.Features.Todos
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<TodoDto>>> GetList()
-            => throw new NotImplementedException();
+        public async Task<ActionResult<List<TodoDto>>> GetList(List.Request request)
+            => Ok(await _mediator.Send(request));
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<TodoDto>> Get()
-            => throw new NotImplementedException();
+        public async Task<ActionResult<TodoDto>> Get(Todo.Request request)
+            => Ok(await _mediator.Send(request));
 
         [HttpPost]
         public async Task<ActionResult<TodoDto>> Post()
